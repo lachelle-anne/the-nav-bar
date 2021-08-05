@@ -1,0 +1,17 @@
+﻿@model ProgrammingProject.Areas.Administration.Models.Section.Section
+    <div class="row text-white">
+        <div class="col-md-6 p-1 m-0" style="display: inline-block; background-color: rgba(0,0,0, 0.95); border-radius: 15px;   color: #f1f1f1; ">
+            <form>
+                <label asp-for="@Model.Name">Name</label>
+                <input type="text" value="@Model.Name" asp-for="@Model.Name" />
+
+                <label asp-for="@Model.RestaurantId">Restaurants</label>
+                <select asp-for="@Model.RestaurantId" asp-items="@Model.Restaurants">
+                    <option value="">Choose a Restaurant</option>
+                </select>
+                <span class="text-danger" asp-validation-for="@Model.RestaurantId">*</span>
+                <br /> <br />
+                <input type="submit" asp-area="Administration" asp-controller="Section" asp-action="Edit" formmethod="post" value="Save Changes" />
+            </form>
+        </div>
+    </div>

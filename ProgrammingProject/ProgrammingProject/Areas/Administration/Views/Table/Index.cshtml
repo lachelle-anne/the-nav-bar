@@ -1,0 +1,32 @@
+﻿@model IReadOnlyCollection<ProgrammingProject.Areas.Administration.Models.Table.Table>
+
+<div class="row text-white">
+    <div class="p-1 m-0" style="display: inline-block; background-color: rgba(0,0,0, 0.95); border-radius: 15px;   color: #f1f1f1; ">
+        <h4>Section</h4>
+        <div>
+            <div><a class="text-uppercase m-2 p-2" asp-area="Administration" asp-controller="Table" asp-action="Create">Create Table</a></div>
+        </div>
+        <div class="p-3">
+            <table>
+                <thead>
+                    <tr>
+                        <td class="font-weight-bold pr-5 pb-3">Table Number</td>
+                        <td class="font-weight-bold pr-5 pb-3">Seats</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var m in Model)
+                    {
+                        <tr>
+                            <td class="pl-5 pr-5 pb-3">@m.TableNumber</td>
+                            <td class="pl-3 pr-5 pb-3">@m.Seats</td>
+                            <td class="pr-5 pb-3"><a asp-area="Administration" asp-controller="Table" asp-action="Edit" asp-route-id="@m.Id">Edit Table</a></td>
+                            <td class="pr-5 pb-3"><a asp-area="Administration" asp-controller="Table" asp-action="Delete" asp-route-id="@m.Id" asp-route-sid="@m.SectionId">Delete Table</a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

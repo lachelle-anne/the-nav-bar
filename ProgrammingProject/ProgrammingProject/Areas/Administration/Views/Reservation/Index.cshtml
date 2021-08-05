@@ -1,0 +1,26 @@
+﻿@model IReadOnlyCollection<ProgrammingProject.Data.Reservation>
+
+<div>
+    <table border="1" cellpadding="3" style="background-color: white">
+        <thead>
+            <tr>
+                <td>Start</td>
+                <td>Booker</td>
+                <td>Attendees</td>
+                <td>Sitting</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var m in Model)
+            {
+                <tr>
+                    <td>@m.Start</td>
+                    <td>@m.Booker.FirstName @m.Booker.LastName</td>
+                    <td>@m.Guests</td>
+                    <td>@m.Sitting.Name</td>
+                    <td><a asp-area="Administration" asp-controller="Reservation" asp-action="Details" asp-route-id="@m.Id">Details</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

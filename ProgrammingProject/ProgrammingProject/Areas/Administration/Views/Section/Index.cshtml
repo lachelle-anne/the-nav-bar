@@ -1,0 +1,30 @@
+﻿@model IReadOnlyCollection<ProgrammingProject.Data.Section>
+
+<div class="row text-white">
+    <div class="p-1 m-0" style="display: inline-block; background-color: rgba(0,0,0, 0.95); border-radius: 15px;   color: #f1f1f1; ">
+        <h2 class="text-uppercase m-2 p-2"><a asp-area="Administration" asp-controller="Section" asp-action="Create">Create An Area</a></h2>
+        <div class="p-3">
+            <table>
+                <thead>
+                    <tr>
+                        <td class="font-weight-bold pr-5 pb-3">Area Id</td>
+                        <td class="font-weight-bold pr-5 pb-3">Name</td>
+                        <td class="font-weight-bold pr-5 pb-3">Management</td> 
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var m in Model)
+                    {
+                        <tr>
+                            <td class="pl-4 pb-3">@m.Id</td>
+                            <td class="pb-3">@m.Name</td>
+                            <td class="pr-5 pb-3"><a class="text-secondary" asp-area="Administration" asp-controller="Table" asp-action="Index" asp-route-id="@m.Id">Manage Section Tables</a></td>
+                            <td class="pr-5 pb-3"><a class="text-secondary" asp-area="Administration" asp-controller="Section" asp-action="Edit" asp-route-id="@m.Id">Edit</a></td>
+                            <td class="pb-3"><a class="text-secondary" asp-area="Administration" asp-controller="Section" asp-action="Delete" asp-route-id="@m.Id">Delete</a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

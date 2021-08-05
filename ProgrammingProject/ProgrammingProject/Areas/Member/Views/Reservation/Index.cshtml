@@ -1,0 +1,29 @@
+﻿@model IReadOnlyCollection<ProgrammingProject.Data.Reservation>
+
+<div>
+    <table>
+        <thead>
+            <tr>
+                <td>Id</td>
+                <td>Start</td>
+                <td>Sitting</td>
+                <td>Attendees</td>
+                <td>Notes</td>
+                <td>Status</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var m in Model)
+            {
+                <tr>
+                    <td>@m.Id</td>
+                    <td>@m.Start</td>
+                    <td>@m.Sitting</td>
+                    <td>@m.Guests</td>
+                    <td>@m.Notes</td>
+                    <td>@m.Status</td>  
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

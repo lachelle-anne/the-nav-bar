@@ -1,0 +1,15 @@
+﻿@model ProgrammingProject.Models.Reservation.Sitting
+@{ 
+    ViewData["Title"] = "Sittings";
+}
+<div class="p-3 m-0" style="display:inline-block; background-color: rgba(0,0,0, 0.95); border-radius: 15px;   color: #f1f1f1;">
+    <div class=" col-12 text-light w-100 d-none d-md-block">
+        <form method="get" asp-area="" asp-controller="Reservation" asp-action="ReservationDetails" asp-route-sittingid="@Model.SittingId">
+            <h2>@ViewData["Title"]</h2>
+            <select asp-for="@Model.SittingId" asp-items="@Model.SittingOptions">
+                <option>Select a Sitting</option>
+            </select>
+            <input type="submit" />
+        </form>
+    </div>
+</div>

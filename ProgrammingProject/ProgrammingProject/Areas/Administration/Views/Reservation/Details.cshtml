@@ -1,0 +1,25 @@
+﻿@model ProgrammingProject.Data.Reservation
+
+<div class="bg-white">
+    <div>
+        <label>Booker</label>
+        <input readonly="readonly" value="@Model.Booker.FirstName @Model.Booker.LastName" />
+        <br /><br />
+        <label>Start</label>
+        <input readonly="readonly" value="@Model.Start.ToString("dd/MM/yyyy hh:mm tt")" />
+        <br /><br />
+        <label>Sitting</label>
+        <input readonly="readonly" value="@Model.Sitting.Name" />
+        <br /><br />
+        <label>Attendees</label>
+        <input readonly="readonly" value="@Model.Guests" />
+        <br /><br />
+        <label>Status</label>
+        <input readonly="readonly" value="@Model.Status.Status" />
+
+        <div>
+            <a asp-action="Delete" asp-controller="Reservation" asp-area="Administration" asp-route-id="@Model.Id">Cancel Reservation</a>
+            <a asp-action="Index" asp-controller="Reservation" asp-area="Administration">Go Back</a>
+        </div>
+    </div>
+</div>

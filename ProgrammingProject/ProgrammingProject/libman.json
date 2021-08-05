@@ -1,0 +1,26 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+  {
+    "library": "twitter-bootstrap@5.0.0-beta2",
+    "destination": "wwwroot/twitter-bootstrap/"
+  },
+  {
+    "library": "moment.js@2.29.1",
+    "destination": "wwwroot/lib/moment.js/"
+  },
+  {
+    "library": "bootstrap-datetimepicker@4.17.47",
+    "destination": "wwwroot/lib/bootstrap-datetimepicker/"
+  },
+  {
+    "library": "fontawesome-iconpicker@3.2.0",
+    "destination": "wwwroot/lib/fontawesome-iconpicker/"
+  },
+  {
+    "library": "font-awesome@5.15.3",
+    "destination": "wwwroot/lib/font-awesome/"
+  }
+]
+}

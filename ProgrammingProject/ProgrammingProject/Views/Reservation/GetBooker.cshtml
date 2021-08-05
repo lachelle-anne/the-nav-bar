@@ -1,0 +1,61 @@
+﻿@model ProgrammingProject.Models.Reservation.ReservationPerson
+@{ 
+    ViewData["Title"] = "Confirm Details";
+}
+<div class="m-4 row text-white">
+    <div class="col-md-8 m-3 p-4" style="display: inline-block; background-color: rgba(0,0,0, 0.95); border-radius: 15px;   color: #f1f1f1; ">
+        <div class="row m-3">
+            <h2>@ViewData["Title"]</h2>
+            <div class="col-7">
+                <form method="post" asp-area="" asp-controller="Reservation" asp-action="GuestInformation">
+                    <div class="form-group m-0">
+                        <label asp-for="@Model.TitleId"></label><span asp-validation-for="@Model.TitleId" class="text-danger"> *</span>
+                        <select asp-for="@Model.TitleId" asp-items="@Model.Titles">
+                            <option>Please Select a Title</option>
+                        </select>
+                    </div>
+                    <div class="form-group m-0">
+                        <label asp-for="@Model.FirstName"></label><span asp-validation-for="FirstName" class="text-danger"> *</span>
+                        <input asp-for="@Model.FirstName" type="text" class="form-control" />
+                    </div>
+                    <div class="form-group m-0">
+                        <label asp-for="@Model.LastName"></label><span asp-validation-for="LastName" class="text-danger"> *</span>
+                        <input asp-for="@Model.LastName" type="text" class="form-control" />
+                    </div>
+                    <div class="form-group m-0">
+                        <label asp-for="@Model.Email"></label><span asp-validation-for="Email" class="text-danger"> *</span>
+                        <input asp-for="@Model.Email" type="email" class="form-control" />
+                    </div>
+                    <div class="form-group m-0">
+                        <label asp-for="@Model.PhoneNumber"></label><span asp-validation-for="PhoneNumber" class="text-danger"> *</span>
+                        <input asp-for="@Model.PhoneNumber" type="tel" class="form-control" />
+                    </div>
+                    <input type="submit" value="Confirm Booking" class="btn btn-primary mt-3" />
+                    <input hidden asp-for="@Model.Start" value="@Model.Start" />
+                    <input hidden asp-for="@Model.SittingId" value="@Model.SittingId" />
+                    <input hidden asp-for="@Model.Notes" value="@Model.Notes" />
+                    <input hidden asp-for="@Model.Guests" value="@Model.Guests" />
+                </form>
+            </div>
+            <div class="col-1 hidden-xs hidden-sm"></div>
+            <div class="col-md-4">
+                <h3>Booking Details: </h3>
+                <br />
+                <div class="form-group m-0">
+                    <h5>Start Time: </h5>
+                    <div>@Model.Start.ToString("ddd d MMM - hh:mm tt")</div>
+                </div>
+                <br />
+                <div class="form-group m-0">
+                    <h5>Guests: </h5>
+                    <div>@Model.Guests</div>
+                </div>
+                <br />
+                <div class="form-group m-0">
+                    <h5>Notes: </h5>
+                    <div>@Model.Notes</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

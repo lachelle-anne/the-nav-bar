@@ -1,0 +1,18 @@
+﻿@model ProgrammingProject.Data.Table
+
+<div class="row text-white">
+    <div class="col-6 w-50 p-4" style="display: inline-block; background-color: rgba(0,0,0, 0.95); border-radius: 15px;   color: #f1f1f1; ">
+        <form>
+            <div>
+                <label asp-for="@Model.TableNumber">Table Number</label>
+                <input type="number" asp-for="@Model.TableNumber" />
+            </div>
+            <br />
+            <div>
+                <label asp-for="@Model.Seats">Seats</label>
+                <input type="number" asp-for="@Model.Seats" />
+            </div>
+            <input type="submit" asp-area="Administration" asp-controller="Table" asp-action="Edit" asp-route-sectionid="@Model.SectionId" formmethod="post" />
+        </form>
+    </div>
+</div>

@@ -1,0 +1,70 @@
+﻿@model ProgrammingProject.Areas.Administration.Models.Sitting.Sitting
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Sitting</h4>
+<hr />
+<div class="row bg-dark text-light">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="StartTime" class="control-label"></label>
+                <input asp-for="StartTime" class="form-control" />
+                <span asp-validation-for="StartTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EndTime" class="control-label"></label>
+                <input asp-for="EndTime" class="form-control" />
+                <span asp-validation-for="EndTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SittingName" class="control-label"></label>
+                <input asp-for="SittingName" class="form-control" />
+                <span asp-validation-for="SittingName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Capacity" class="control-label"></label>
+                <input asp-for="Capacity" class="form-control" />
+                <span asp-validation-for="Capacity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RestaurantId" class="control-label"></label>
+                <input asp-for="RestaurantId" class="form-control" />
+                <span asp-validation-for="RestaurantId" class="text-danger"></span>
+            </div>
+            <div>
+                <select asp-for="@Model.SittingTypeId" asp-items="@Model.SittingTypes">
+                    <option value="1">Please Choose a Sitting Type</option>
+                </select>
+            </div>
+            <div>
+                <label asp-for="@Model.IsClosed"></label>
+                <select asp-for="@Model.IsClosed">
+                    <option value="false">False</option>
+                    <option value="true">True</option>
+                </select>
+            </div>
+            <div>
+                <label asp-for="@Model.RestaurantId"></label>
+                <select asp-for="@Model.RestaurantId" asp-items="@Model.Restaurants">
+                    <option value="1">Please choose a restaurant</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="hidden" asp-for="Id" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

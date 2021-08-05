@@ -1,0 +1,26 @@
+﻿@model ProgrammingProject.Models.Reservation.Reservation
+    ViewData["Title"] = "Booking Confirmation";
+}
+
+<div class="m-4 row text-white">
+    <div class="col-md-8 m-3 p-4 w-50" style="display: inline-block; background-color: rgba(0,0,0, 0.95); border-radius: 15px;   color: #f1f1f1; ">
+        <h2>@ViewData["Title"]</h2>
+        <div>
+            <h4>Reservation Number </h4>
+            <div>@Model.Id</div>
+        </div>
+        <div>
+            <h4>Start Time </h4>
+            <div>@Model.Start.ToString("ddd d MMM - hh:mm tt")</div>
+        </div>
+        <div>
+            <h4>Sitting Id </h4>
+            <div>@Model.SittingId</div>
+        </div>
+        <div>
+            <h4>Guests </h4>
+            <div>@Model.Guests</div>
+        </div>
+    </div>
+</div>
+
